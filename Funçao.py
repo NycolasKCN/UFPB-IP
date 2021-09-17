@@ -1,5 +1,5 @@
 def sumDigitos():
-    """
+    """ Soma os digitos de uma sting e printa o resultado
     return: None"""
     listaStr = list()
     soma = 0
