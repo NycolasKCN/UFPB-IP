@@ -12,27 +12,43 @@ Desenvolva três funções:
 ->a terceira deverá calcular o melhor custo considerando latas e galões de tal forma a desperdiçar menos tinta.
 Acrescente 10% de folga e sempre arredonde os valores para cima, isto é, considere latas ou galões cheios e não 
 como número fracionados."""
-areaTotal = float(input("Digite o valor em metros²: "))
-litroNecessarios = areaTotal / 6
 
-
-def latasNecessarias():
+def latasNecessarias(litrosTinta):
     preço = 80.00
     litroLata = 18
-    quantidadeLatas = round((litroNecessarios / litroLata) + 0.5)
+    quantidadeLatas = round((litrosTinta / litroLata) + 0.5)
     custoLatas = quantidadeLatas * preço
     return quantidadeLatas, custoLatas
 
 
-def galoesNecessarios():
+def galoesNecessarios(litrosTinta):
     preço = 25.00
     litroGalao = 3.6
-    quantidadeGaloes = round((litroNecessarios / litroGalao) + 0.5)
+    quantidadeGaloes = round((litrosTinta / litroGalao) + 0.5)
     custoGalao = quantidadeGaloes * preço
     return quantidadeGaloes, custoGalao
 
-def lataEgalao():
-    pass
+def lataEgalao(litrosTinta):
+    lata = int(litrosTinta / 18)
+    execedenteLitros = (float(litrosTinta / 18) - lata) * 18
+    galoes = execedenteLitros / 3.6
+    return lata, galoes
+    
 
+areaTotal = float(input("Digite o valor em metros²: "))
+litroNecessarios = areaTotal / 6
 
-print(galoesNecessarios())
+galoes = galoesNecessarios(litroNecessarios)
+latas = latasNecessarias(litroNecessarios)
+latas2, galoes2 = lataEgalao(litroNecessarios)
+valorMisturado = (latas2 * 80) + (galoes2 * 25)
+
+print("-="*20)
+print("Valores na lojinha do seu zé")
+print("Quantidade de galões necessaria e preço: {} galões R${:.2f}".format(galoes[0], galoes[1]))
+print("Quantidade de latas necessarias e preço: {} latas R${:.2f}".format(latas[0], latas[1]))
+print(f" {'LATAS e GALÕES':<20}:")
+print(f"R$ {valorMisturado:>15.2f}")
+print(f"Qt. {latas2:>10} Lata(s)")
+print(f"Qt. {latas2:>10} Galão(ões)")
+print("-="*20)
