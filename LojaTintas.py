@@ -19,17 +19,20 @@ litroNecessarios = areaTotal / 6
 def latasNecessarias():
     preço = 80.00
     litroLata = 18
-    quantidadeLatas = round(litroNecessarios / litroLata + 0.5)
+    quantidadeLatas = round((litroNecessarios / litroLata) + 0.5)
     custoLatas = quantidadeLatas * preço
     return quantidadeLatas, custoLatas
 
 
 def galoesNecessarios():
+    preço = 25.00
     litroGalao = 3.6
-    pass
+    quantidadeGaloes = round((litroNecessarios / litroGalao) + 0.5)
+    custoGalao = quantidadeGaloes * preço
+    return quantidadeGaloes, custoGalao
 
 def lataEgalao():
     pass
 
 
-print(latasNecessarias())
+print(galoesNecessarios())
