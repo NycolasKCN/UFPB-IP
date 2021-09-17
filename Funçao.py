@@ -4,7 +4,8 @@ def sumDigitos():
     listaStr = list()
     soma = 0
     numeros = str(input("Digite os numeros entre 1000 e 9999: "))
-    if len(numeros) == 4:
+    numerosInt = int(numeros)
+    if 1000 <= numerosInt <= 9999:
         for digitos in range(len(numeros)):
             listaStr.append(numeros[digitos])
         for item in listaStr:
