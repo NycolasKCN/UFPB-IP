@@ -2,7 +2,8 @@
 Calcule e mostre o total do seu salário no referido mês."""
 
 valorPorHora = float(input("Digite quanto você ganha por hora: R$"))
-horaTrabalhada = int(input("Digite a quantida de horas trabalhadas nesse mês: "))
+horaTrabalhada = int(
+    input("Digite a quantida de horas trabalhadas nesse mês: "))
 
 salario = horaTrabalhada * valorPorHora
 
