@@ -30,7 +30,7 @@ def galoesNecessarios(litrosTinta):
 
 def lataEgalao(litrosTinta):
     lata = int(litrosTinta / 18)
-    execedenteLitros = (float(litrosTinta / 18) - lata) * 18
+    execedenteLitros = ((litrosTinta / 18) - lata) * 18
     galoes = execedenteLitros / 3.6
     return lata, galoes
     
