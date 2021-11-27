@@ -12,7 +12,7 @@ def linha():
     print()
 
 
-def calculaTaxaBagagem(tipoVoo, pesoBagagem):
+def calculaTaxaBagagem(tipoVoo: str, pesoBagagem: float):
     """
     Imprime o tipo de voo. Caso exceda o limite de peso do tipo da viagem imprime
     um aviso e o valor da taxa a ser cobrado
@@ -20,7 +20,7 @@ def calculaTaxaBagagem(tipoVoo, pesoBagagem):
     :param tipoVoo: str
     :param pesoBagagem: float
     """
-    
+
     listPassagem = [
         ["nacional", 23, 6],
         ["internacional", 35, 13]
