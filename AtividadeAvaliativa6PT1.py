@@ -29,7 +29,7 @@ class Checkout(object):
         self.diarias = 0
         self.tipoAp = ""
 
-    def CauculaHospedagem(self) -> float:
+    def CalculaHospedagem(self) -> float:
 
         valorTipoAp = dictAp[self.tipoAp]
         valorTotalHospedagem = valorTipoAp * self.diarias
@@ -51,7 +51,7 @@ class Checkout(object):
         print(f"passou {self.diarias} diarias no hotel")
         print(f"No Apartamento: {self.tipoAp}")
 
-        valorHospedagem = self.CauculaHospedagem()
+        valorHospedagem = self.CalculaHospedagem()
         print(f"O valor total a ser pago será de R$ {valorHospedagem:.2f}")
 
 
